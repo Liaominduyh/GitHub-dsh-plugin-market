@@ -1,4 +1,4 @@
-# dsw-workshop-plugin · github-dsh插件市场（DSH）
+# github-dsh插件市场（DSH）
 
 DeepSeek Harness 的「github-dsh插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
 
