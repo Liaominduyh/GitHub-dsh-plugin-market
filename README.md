@@ -36,8 +36,7 @@ dsh plugin --profile web add link:~/.dsh/plugins/dsw-workshop-plugin
 - `cordis.patch.yml` — bundle 激活补丁（`dsh plugin add` 后自动加入 profile 的 `dsh.profile.bundles`）
 - `lib/index.js` — Host 侧：webServer HTTP 路由 `/dsw-workshop/api/*`（注册表聚合 / 官方安装 / 订阅管理 / 翻译 / 摘要）
 - `lib/client.js` — Client 侧：`__ModuleLoader__.load` bundle（React UI + fetch 桥接）
-- `plugin-source.js` — 动态版源码备份（旧机制，仅供恢复参考）
-- 运行时数据目录：`~/.dsh/plugins/dsw-workshop-plugin/data/`（subscriptions / summaries / translations / registry，首次自动从旧目录迁移）
+- 运行时数据目录：`~/.dsh/plugins/dsw-workshop-plugin/data/`（subscriptions / summaries / translations / registry）
 
 ## 技术要求
 
