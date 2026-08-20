@@ -15,6 +15,15 @@ DeepSeek Harness 的「github-dsh插件市场」插件 —— 浏览、搜索、
 
 ## 安装（静态版，永久常驻）
 
+> **环境要求**
+>
+> - **DSH web 环境**：本插件运行于 `web` profile（`dsh web`）
+> - **Node.js + pnpm**：`dsh plugin` 命令依赖 pnpm（`corepack enable pnpm` 或 `npm i -g pnpm`）
+> - **gh CLI（已登录）**：GitHub 数据源（注册表搜索 / README / 订阅更新）经 `gh` 调用 api.github.com
+> - **git**：订阅本地副本（克隆 / 更新 / 回滚）功能需要
+> - **网络**：可达 npm registry 与 api.github.com
+> - **已配置 LLM 模型**：描述自动翻译与 AI 摘要功能使用 DSH 默认模型
+
 ### 方式一：npm（推荐）
 
 ```bash
