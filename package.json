@@ -26,11 +26,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Liaominduyh/dsw-workshop-plugin.git"
+    "url": "git+https://github.com/Liaominduyh/GitHub-dsh-plugin-market.git"
   },
-  "homepage": "https://github.com/Liaominduyh/dsw-workshop-plugin",
+  "homepage": "https://github.com/Liaominduyh/GitHub-dsh-plugin-market",
   "bugs": {
-    "url": "https://github.com/Liaominduyh/dsw-workshop-plugin/issues"
+    "url": "https://github.com/Liaominduyh/GitHub-dsh-plugin-market/issues"
   },
   "dsh": {
     "bundle": {

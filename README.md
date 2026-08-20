@@ -1,4 +1,4 @@
-# github-dsh插件市场（DSH）
+# github-dsh插件市场
 
 DeepSeek Harness 的「github-dsh插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
 
@@ -26,7 +26,7 @@ dsh plugin --profile web add dsw-workshop-plugin
 ### 方式二：GitHub 源码（Run from source）
 
 ```bash
-git clone https://github.com/Liaominduyh/dsw-workshop-plugin ~/.dsh/plugins/dsw-workshop-plugin
+git clone https://github.com/Liaominduyh/GitHub-dsh-plugin-market ~/.dsh/plugins/dsw-workshop-plugin
 dsh plugin --profile web add link:~/.dsh/plugins/dsw-workshop-plugin
 ```
 
