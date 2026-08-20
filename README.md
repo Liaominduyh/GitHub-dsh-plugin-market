@@ -19,14 +19,25 @@ DeepSeek Harness 的「GitHub 插件市场」插件 —— 浏览、搜索、一
 
 ## 安装（静态版，永久常驻）
 
+### 方式一：npm（推荐）
+
 ```bash
-# 1. 源码放到专门目录
+dsh plugin --profile web add dsw-workshop-plugin
+```
+
+重启 `dsh web` —— 侧边栏出现「GitHub 插件市场」，此后每次启动自动加载。
+
+### 方式二：GitHub 源码（Run from source）
+
+```bash
 git clone https://github.com/Liaominduyh/dsw-workshop-plugin ~/.dsh/plugins/dsw-workshop-plugin
-
-# 2. 安装到 profile（自动加入 bundles，无需改配置）
 dsh plugin --profile web add link:~/.dsh/plugins/dsw-workshop-plugin
+```
 
-# 3. 重启 dsh web —— 侧边栏出现「GitHub 插件市场」，此后每次启动自动加载
+### 方式三：Release tarball
+
+```bash
+dsh plugin --profile web add https://github.com/Liaominduyh/dsw-workshop-plugin/releases/download/v2.0.0/dsw-workshop-plugin-2.0.0.tgz
 ```
 
 ### 卸载

@@ -15,6 +15,23 @@
     "cordis.patch.yml",
     "README.md"
   ],
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "plugin",
+    "market",
+    "marketplace",
+    "web"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Liaominduyh/dsw-workshop-plugin.git"
+  },
+  "homepage": "https://github.com/Liaominduyh/dsw-workshop-plugin",
+  "bugs": {
+    "url": "https://github.com/Liaominduyh/dsw-workshop-plugin/issues"
+  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -28,6 +45,5 @@
     "@deepseek-ai/cordis": "^4.0.1-rc.1",
     "@deepseek-ai/dsh-client-runtime": ">=0.0.1-rc.2 <0.2.0-0 || >=0.1.0-rc.2 <0.2.0-0",
     "@deepseek-ai/dsh-client-ui-slots": ">=0.0.1-rc.2 <0.2.0-0 || >=0.1.0-rc.2 <0.2.0-0"
-  },
-  "license": "MIT"
+  }
 }
