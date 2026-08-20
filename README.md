@@ -1,6 +1,6 @@
-# dsw-workshop-plugin · GitHub 插件市场（DSH）
+# dsw-workshop-plugin · github-dsh插件市场（DSH）
 
-DeepSeek Harness 的「GitHub 插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
+DeepSeek Harness 的「github-dsh插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
 
 ## 功能
 
@@ -21,7 +21,7 @@ DeepSeek Harness 的「GitHub 插件市场」插件 —— 浏览、搜索、一
 dsh plugin --profile web add dsw-workshop-plugin
 ```
 
-重启 `dsh web` —— 侧边栏出现「GitHub 插件市场」，此后每次启动自动加载。
+重启 `dsh web` —— 侧边栏出现「github-dsh插件市场」，此后每次启动自动加载。
 
 ### 方式二：GitHub 源码（Run from source）
 

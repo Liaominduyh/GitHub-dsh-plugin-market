@@ -1,7 +1,7 @@
 {
   "name": "dsw-workshop-plugin",
-  "version": "2.0.1",
-  "description": "DSH GitHub 插件市场：双源聚合 2830+ 插件浏览、官方一键安装、自动翻译、git 订阅管理",
+  "version": "2.0.2",
+  "description": "github-dsh插件市场：双源聚合 2830+ 插件浏览、官方一键安装、自动翻译、git 订阅管理",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
