@@ -1,8 +1,10 @@
 # dsw-workshop-plugin · GitHub 插件市场（DSH）
 
-DeepSeek Harness 内置的「GitHub 插件市场」动态 Cordis 插件 —— 浏览、搜索、一键安装 DSH 生态插件。
+DeepSeek Harness 的「GitHub 插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
 
-> 本仓库存放该动态插件的**完整源码备份**（`plugin-source.js`）。动态插件定义只存在于进程内存，DSH 重启后需要重新激活；本仓库即恢复用的权威来源。
+包含两个版本：
+- **静态版（推荐，常驻）**：`package.json` + `cordis.patch.yml` + `lib/`，标准 Cordis 插件包，随 profile 启动自动加载
+- **动态版备份**：`plugin-source.js`（旧版函数体字符串，供参考/恢复）
 
 ## 功能
 
@@ -15,21 +17,36 @@ DeepSeek Harness 内置的「GitHub 插件市场」动态 Cordis 插件 —— �
 - **AI 摘要**：GitHub 搜索结果自动生成中文插件摘要（简介 / 核心功能 / 安装方法），带磁盘缓存
 - 数据源每日刷新，本地磁盘缓存 24h + 面板内 30 分钟自动刷新，离线兜底
 
-## 恢复方法（DSH 重启后）
+## 安装（静态版，永久常驻）
 
-1. 读取 `plugin-source.js`（`module.exports = { host, client }`，均为函数体字符串）
-2. 用 cordis_define 重新定义：`{ plugin: { kind: 'new', idPrefix: 'dsw' }, code: { host: source.host, client: source.client } }`
-3. cordis_run 激活，刷新页面
+```bash
+# 1. 源码放到专门目录
+git clone https://github.com/Liaominduyh/dsw-workshop-plugin ~/.dsh/plugins/dsw-workshop-plugin
 
-或直接对我说「启动插件市场」，我会读取本仓库源码自动恢复。
+# 2. 安装到 profile（自动加入 bundles，无需改配置）
+dsh plugin --profile web add link:~/.dsh/plugins/dsw-workshop-plugin
 
-## 数据位置
+# 3. 重启 dsh web —— 侧边栏出现「GitHub 插件市场」，此后每次启动自动加载
+```
 
-- 订阅 / 摘要 / 译文缓存：`<DSH 工作目录>/dsw-workshop/`（`subscriptions.json`、`summaries.json`、`translations.json`、`registry.json`）
-- 这些数据不受 DSH 重启影响，恢复插件后自动继续使用
+### 卸载
+
+```bash
+dsh plugin --profile web remove dsw-workshop-plugin
+Remove-Item -Recurse -Force ~/.dsh/plugins/dsw-workshop-plugin
+```
+
+## 结构
+
+- `cordis.patch.yml` — bundle 激活补丁（`dsh plugin add` 后自动加入 profile 的 `dsh.profile.bundles`）
+- `lib/index.js` — Host 侧：webServer HTTP 路由 `/dsw-workshop/api/*`（注册表聚合 / 官方安装 / 订阅管理 / 翻译 / 摘要）
+- `lib/client.js` — Client 侧：`__ModuleLoader__.load` bundle（React UI + fetch 桥接）
+- `plugin-source.js` — 动态版源码备份（旧机制，仅供恢复参考）
+- 运行时数据目录：`~/.dsh/plugins/dsw-workshop-plugin/data/`（subscriptions / summaries / translations / registry，首次自动从旧目录迁移）
 
 ## 技术要求
 
-- 动态 Cordis 插件（Host + Client），依赖 DSH 的 `harness`、`shell`、`fs`、`llm`、`slots`、`timer` 等能力
+- Host：普通 Cordis 插件（Node 环境），依赖 `webServer` 服务注册 HTTP 路由
+- Client：`__ModuleLoader__.load` 格式浏览器 bundle，依赖 `dsh-client-runtime` / `dsh-client-ui-slots` / react
 - 安装插件需要 pnpm（`dsh plugin` 依赖），GitHub 数据经 `gh` CLI / api.github.com 获取
 - 官方安装的插件需重启 DSH 生效（bundle 层启动时加载）
