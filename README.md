@@ -2,10 +2,6 @@
 
 DeepSeek Harness 的「GitHub 插件市场」插件 —— 浏览、搜索、一键安装 DSH 生态插件。
 
-包含两个版本：
-- **静态版（推荐，常驻）**：`package.json` + `cordis.patch.yml` + `lib/`，标准 Cordis 插件包，随 profile 启动自动加载
-- **动态版备份**：`plugin-source.js`（旧版函数体字符串，供参考/恢复）
-
 ## 功能
 
 - **精选目录（双源聚合）**：合并 [awesome-dsh-plugin](https://awesome-dsh-plugin.com)（1449 个）与 [dshget-data](https://github.com/bobby-sheng/dshget-data)（2460 个，聚合 hrhgit-catalog / omdsh-hub / github-topic 等 4 个商城目录），按仓库去重后约 **2830 个插件**
@@ -34,18 +30,6 @@ git clone https://github.com/Liaominduyh/dsw-workshop-plugin ~/.dsh/plugins/dsw-
 dsh plugin --profile web add link:~/.dsh/plugins/dsw-workshop-plugin
 ```
 
-### 方式三：Release tarball
-
-```bash
-dsh plugin --profile web add https://github.com/Liaominduyh/dsw-workshop-plugin/releases/download/v2.0.0/dsw-workshop-plugin-2.0.0.tgz
-```
-
-### 卸载
-
-```bash
-dsh plugin --profile web remove dsw-workshop-plugin
-Remove-Item -Recurse -Force ~/.dsh/plugins/dsw-workshop-plugin
-```
 
 ## 结构
 
